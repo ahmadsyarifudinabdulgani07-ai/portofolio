@@ -3,152 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Saya</title>
+    <title>Portofolio | Ahmad Syarifudin Abdul Gani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #04243d; /* Warna tema dari PDF */
+            --accent-blue: #0a4d80;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-gray: #f4f7f9;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Hero Section */
+        header {
+            background: linear-gradient(rgba(4, 36, 61, 0.8), rgba(4, 36, 61, 0.9)), url('https://via.placeholder.com/1500x800'); /* Ganti dengan foto Anda */
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent-blue);
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* About Section */
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        .philosophy {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Experience & Skills Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+
+        /* Software Icons Style */
+        .software-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: var(--dark-blue);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Testimonials */
+        .testi-card {
+            border-left: 4px solid var(--accent-blue);
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section & Social Buttons */
+        .contact-info {
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-wa { background-color: #25d366; color: white; }
+        .btn-ig { background-color: #e4405f; color: white; }
+        .btn-pdf { background-color: #e74c3c; color: white; }
+        .btn-email { background-color: var(--dark-blue); color: white; }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Portfolio</div>
+<header>
+    <h1>AHMAD SYARIFUDIN ABDUL GANI</h1>
+    <p>Fotografer | Videografer | Editor</p>
+</header>
 
-            <ul class="nav-links">
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#skills">Keahlian</a></li>
-                <li><a href="#experience">Pengalaman</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
+<nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#karya">Karya</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#kontak">Kontak</a>
+</nav>
 
-            <div class="menu-toggle">&#9776;</div>
-        </nav>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Halo, Saya <span>Nama Anda</span></h1>
-            <p>Web Developer | UI/UX Designer | Freelancer</p>
-            <a href="#projects" class="btn">Lihat Proyek</a>
+<div class="container">
+    
+    <section id="tentang">
+        <h2>Tentang Saya</h2>
+        <div class="about-text">
+            <p>Saya adalah lulusan sekolah IT dengan dedikasi yang tinggi dalam pengembangan teknologi. Dengan pengalaman lebih dari 1 tahun di dunia visual, saya berdedikasi untuk menangkap esensi setiap momen melalui lensa kamera. Saya tidak hanya mengambil gambar, tetapi mengukir cerita yang beresonansi.</p>
+            <p class="philosophy">"Segalanya berawal dan bermuara dari dan untuk hati"</p>
         </div>
     </section>
 
-    <!-- Tentang Saya -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <p>
-                Saya adalah seorang Web Developer yang memiliki pengalaman dalam
-                membangun website modern, responsif, dan user-friendly.
-                Saya senang mempelajari teknologi baru dan menciptakan solusi
-                digital yang efektif.
-            </p>
-        </div>
-    </section>
-
-    <!-- Keahlian -->
-    <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2>Keahlian</h2>
-
-            <div class="skills-grid">
-                <div class="skill-card">HTML5</div>
-                <div class="skill-card">CSS3</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">Bootstrap</div>
-                <div class="skill-card">React JS</div>
-                <div class="skill-card">Node.js</div>
-                <div class="skill-card">PHP</div>
-                <div class="skill-card">MySQL</div>
+    <section id="pengalaman">
+        <h2>Pengalaman Kerja</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Broadcast Nelita</h3>
+                <p><strong>SMKN 5 KOTA TANGERANG (2023)</strong></p>
+                <p>Memahami dunia broadcasting, fotografi, serta mengoperasikan berbagai alat foto, video, dan editing sebagai Event Organizer.</p>
+            </div>
+            <div class="card">
+                <h3>Maintenance Lab Komputer</h3>
+                <p><strong>SMKN 5 KOTA TANGERANG (2023)</strong></p>
+                <p>Merawat komputer lab, membangun jaringan lokal, dan memastikan seluruh infrastruktur berfungsi dengan baik.</p>
+            </div>
+            <div class="card">
+                <h3>Finance (Magang)</h3>
+                <p><strong>FIFgroup ASTRA (2023)</strong></p>
+                <p>Mengatur faktur, menyiapkan jadwal pembayaran, serta mengelola bukti pembayaran secara profesional.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pengalaman -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Pengalaman Kerja</h2>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Frontend Developer</h3>
-                    <span>2024 - Sekarang</span>
-                    <p>
-                        Mengembangkan website perusahaan menggunakan React,
-                        Bootstrap, dan API Integration.
-                    </p>
+    <section>
+        <h2>Keahlian & Software</h2>
+        <div class="grid">
+            <div class="card" style="text-align: center;">
+                <h3>Videografi & Fotografi</h3>
+                <p>Pembuatan video dokumenter, komersial, dan profil perusahaan. Penguasaan teknik pencahayaan dan komposisi profesional menggunakan kamera DSLR & Mirrorless.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3>Software Power</h3>
+                <div class="software-tags">
+                    <span class="tag">DaVinci Resolve</span>
+                    <span class="tag">CapCut</span>
+                    <span class="tag">Photoshop</span>
+                    <span class="tag">Lightroom</span>
+                    <span class="tag">Canva</span>
+                    <span class="tag">InDesign</span>
                 </div>
-
-                <div class="timeline-item">
-                    <h3>Freelance Web Developer</h3>
-                    <span>2022 - 2024</span>
-                    <p>
-                        Membuat website UMKM, company profile, dan landing page
-                        untuk berbagai klien.
-                    </p>
-                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;">Spesialisasi: Retouching, Color Grading, & Remove Background.</p>
             </div>
         </div>
     </section>
 
-    <!-- Proyek -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2>Proyek</h2>
-
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="">
-                    <div class="project-content">
-                        <h3>Website Company Profile</h3>
-                        <p>Website modern untuk perusahaan dengan desain profesional.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="">
-                    <div class="project-content">
-                        <h3>E-Commerce</h3>
-                        <p>Toko online lengkap dengan sistem pembayaran digital.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x250" alt="">
-                    <div class="project-content">
-                        <h3>Dashboard Admin</h3>
-                        <p>Dashboard monitoring data dengan visualisasi interaktif.</p>
-                    </div>
-                </div>
-
-            </div>
+    <section id="karya">
+        <h2>Projek Portofolio</h2>
+        <div class="grid" style="text-align: center;">
+            <div class="card"><h4>Wedding Projects</h4></div>
+            <div class="card"><h4>PORKAB VI</h4></div>
+            <div class="card"><h4>AAFI</h4></div>
+            <div class="card"><h4>E-Time</h4></div>
         </div>
     </section>
 
-    <!-- Kontak -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Kontak</h2>
-
-            <form class="contact-form">
-                <input type="text" placeholder="Nama">
-                <input type="email" placeholder="Email">
-                <textarea rows="5" placeholder="Pesan"></textarea>
-                <button type="submit">Kirim Pesan</button>
-            </form>
+    <section id="testimoni">
+        <h2>Testimoni</h2>
+        <div class="testi-card">
+            <p>"Hasil foto dan video sangat memuaskan, profesional dan tepat waktu. Kerja sama yang luar biasa!"</p>
+            <small><strong>- PT Kreatif Media</strong></small>
+        </div>
+        <div class="testi-card">
+            <p>"Editing yang detail dan kreatif membuat video promosi kami tampil beda dan sangat menarik perhatian pasar."</p>
+            <small><strong>- Brand Fashion Lokal</strong></small>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Portfolio Pribadi. All Rights Reserved.</p>
-    </footer>
+    <section id="kontak" class="contact-info">
+        <h2>Hubungi Saya</h2>
+        <p>Jl. KH Mustofa, Kel. Poris Jaya, Kec. Batu Ceper</p>
+        <p>Email: ahmadsarifudinabdulgoni@gmail.com</p>
+        
+        <div class="social-links">
+            <a href="https://wa.me/6281779211072" class="btn btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://instagram.com/ahmadsarifudinabdulgoni" class="btn btn-ig" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="mailto:ahmadsarifudinabdulgoni@gmail.com" class="btn btn-email">
+                <i class="fas fa-envelope"></i> Kirim Email
+            </a>
+            <br><br>
+            <a href="Portofilio gani.pdf" class="btn btn-pdf" download>
+                <i class="fas fa-file-pdf"></i> Download Full Portofolio (PDF)
+            </a>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+</div>
+
+<footer>
+    <p>&copy; 2026 Ahmad Syarifudin Abdul Gani. Seluruh Hak Cipta Dilindungi.</p>
+</footer>
+
 </body>
 </html>
